@@ -1,10 +1,10 @@
 # Apigee-Mock-Soap-API
 
-## Use 'http://10.140.0.3:9001/mock-soap-api?wsdl' to get WSDL.
+## Use 'http://{your host}:{your port}/mock-soap-api?wsdl' to get WSDL.
 
-## Use the following 'curl' command to invoke:
+## Use the following 'curl' command to invoke 'AddInteger' service:
 ```
-curl -X POST 'http://10.140.0.3:9001/mock-soap-api' \
+curl -X POST 'http://{your host}:{your port}/mock-soap-api' \
 -H 'Content-Type: text/xml' \
 -H 'SOAPAction: http://tempuri.org/SOAP.Demo.AddInteger' \
 -d '<SOAP-ENV:Envelope
