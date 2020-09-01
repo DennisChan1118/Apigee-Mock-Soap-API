@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="EV-GetAddIntegerInputValues">
+    <DisplayName>EV-GetAddIntegerInputValues</DisplayName>
+    <XMLPayload stopPayloadProcessing="false">
+        <Namespaces>
+            <Namespace prefix="soapenv">http://schemas.xmlsoap.org/soap/envelope/</Namespace>
+            <Namespace prefix="t">http://tempuri.org</Namespace>
+        </Namespaces>
+        <Variable name="num1" type="string">
+            <XPath>/soapenv:Envelope/soapenv:Body/t:AddInteger/t:Arg1</XPath>
+        </Variable>
+        <Variable name="num2" type="string">
+            <XPath>/soapenv:Envelope/soapenv:Body/t:AddInteger/t:Arg2</XPath>
+        </Variable>
+    </XMLPayload>
+    <VariablePrefix>flow.input</VariablePrefix>
+    <Source clearPayload="false">request</Source>
+</ExtractVariables>

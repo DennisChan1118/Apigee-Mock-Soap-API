@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="Mock-Soap-API">
+    <DisplayName>Mock-Soap-API</DisplayName>
+    <Description></Description>
+</APIProxy>

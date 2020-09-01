@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>SMV-ValidateSOAPFormat</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="WSDL">
+            <Description/>
+            <Request/>
+            <Response>
+                <Step>
+                    <Name>AM-SetWSDLResponse</Name>
+                </Step>
+            </Response>
+            <Condition>
+                (request.verb = "GET") and 
+                (request.querystring = "wsdl") and 
+                (proxy.pathsuffix = "")
+            </Condition>
+        </Flow>
+        <Flow name="AddInteger">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>EV-GetAddIntegerInputValues</Name>
+                </Step>
+                <Step>
+                    <Name>JS-AddInteger</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM-SetAddIntegerResonese</Name>
+                </Step>
+            </Response>
+            <Condition>
+                (request.verb = "POST") and 
+                (proxy.pathsuffix = "") and 
+                (request.querystring != "wsdl")
+            </Condition>
+        </Flow>
+        <Flow name="CatchAll">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>RF-Raise404NotFound</Name>
+                </Step>
+            </Request>
+            <Response/>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/mock-soap-api</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="noroute"/>
+</ProxyEndpoint>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM-SetWSDLResponse">
+    <DisplayName>AM-SetWSDLResponse</DisplayName>
+    <Set>
+        <Headers>
+            <Header name="Content-Type">application/xml</Header>
+        </Headers>
+        <Payload content-type="application/xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://tempuri.org" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://tempuri.org">
+    <types>
+        <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org">
+            <s:element name="AddInteger">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" name="Arg1" type="s:long"/>
+                        <s:element minOccurs="0" name="Arg2" type="s:long"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+        </s:schema>
+    </types>
+    <message name="AddIntegerSoapIn">
+        <part name="parameters" element="s0:AddInteger"/>
+    </message>
+    <message name="AddIntegerSoapOut">
+        <part name="parameters" element="s0:AddIntegerResponse"/>
+    </message>
+    <portType name="SOAPDemoSoap">
+        <operation name="AddInteger">
+            <input message="s0:AddIntegerSoapIn"/>
+            <output message="s0:AddIntegerSoapOut"/>
+        </operation>
+    </portType>
+    <binding name="SOAPDemoSoap" type="s0:SOAPDemoSoap">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="AddInteger">
+            <soap:operation soapAction="http://tempuri.org/SOAP.Demo.AddInteger" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="SOAPDemo">
+        <port name="SOAPDemoSoap" binding="s0:SOAPDemoSoap">
+            <soap:address location="http://10.140.0.3:9001/mock-soap-api"/>
+        </port>
+    </service>
+</definitions>]]></Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</AssignMessage>

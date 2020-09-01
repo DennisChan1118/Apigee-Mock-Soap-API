@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM-SetAddIntegerResonese">
+    <DisplayName>AM-SetAddIntegerResonese</DisplayName>
+    <Set>
+        <Headers>
+            <Header name="Content-Type">application/xml</Header>
+        </Headers>
+        <Payload content-type="application/xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+    xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/'
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns:s='http://www.w3.org/2001/XMLSchema'>
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <AddIntegerResponse xmlns="http://tempuri.org">
+            <AddIntegerResult>{flow.output.answer}</AddIntegerResult>
+        </AddIntegerResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</AssignMessage>
