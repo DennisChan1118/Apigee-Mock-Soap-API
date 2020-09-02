@@ -13,6 +13,6 @@
             <XPath>/soapenv:Envelope/soapenv:Body/t:AddInteger/t:Arg2</XPath>
         </Variable>
     </XMLPayload>
-    <VariablePrefix>flow.input</VariablePrefix>
+    <VariablePrefix>cv.input</VariablePrefix>
     <Source clearPayload="false">request</Source>
 </ExtractVariables>

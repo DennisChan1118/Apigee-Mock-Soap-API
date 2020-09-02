@@ -2,10 +2,7 @@
 <AssignMessage async="false" continueOnError="false" enabled="true" name="AM-SetWSDLResponse">
     <DisplayName>AM-SetWSDLResponse</DisplayName>
     <Set>
-        <Headers>
-            <Header name="Content-Type">application/xml</Header>
-        </Headers>
-        <Payload content-type="application/xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+        <Payload contentType="text/xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://tempuri.org" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://tempuri.org">
     <types>
         <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org">

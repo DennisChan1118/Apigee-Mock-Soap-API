@@ -46,8 +46,8 @@
             </Response>
             <Condition>
                 (request.verb = "POST") and 
-                (proxy.pathsuffix = "") and 
-                (request.querystring != "wsdl")
+                (request.querystring = "") and 
+                (proxy.pathsuffix = "")
             </Condition>
         </Flow>
         <Flow name="CatchAll">
