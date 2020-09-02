@@ -20,3 +20,19 @@ curl -X POST 'http://{your host}:{your port}/mock-soap-api' \
     </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>'
 ```
+
+The expected result is
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+    xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/'
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns:s='http://www.w3.org/2001/XMLSchema'>
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <AddIntegerResponse xmlns="http://tempuri.org">
+            <AddIntegerResult>5</AddIntegerResult>
+        </AddIntegerResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+```
