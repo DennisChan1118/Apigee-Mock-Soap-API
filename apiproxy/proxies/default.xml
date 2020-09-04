@@ -5,6 +5,16 @@
     <PreFlow name="PreFlow">
         <Request>
             <Step>
+                <Name>BasicAuthentication</Name>
+            </Step>
+            <Step>
+                <Name>RF-RaiseBasicAuthenticationFail</Name>
+                <Condition>
+                    (cv.auth.username != "testuser") and 
+                    (cv.auth.password != "testpwd")
+                </Condition>
+            </Step>
+            <Step>
                 <Name>SMV-ValidateSOAPFormat</Name>
             </Step>
         </Request>
