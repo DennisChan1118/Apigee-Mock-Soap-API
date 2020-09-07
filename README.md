@@ -7,6 +7,7 @@
 curl -X POST 'http://{your host}:{your port}/mock-soap-api' \
 -H 'Content-Type: text/xml' \
 -H 'SOAPAction: http://tempuri.org/SOAP.Demo.AddInteger' \
+-H 'Authorization: Basic dGVzdHVzZXI6dGVzdHB3ZA==' \
 -d '<SOAP-ENV:Envelope
     xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
